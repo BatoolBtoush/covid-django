@@ -1,0 +1,74 @@
+{% extends '_base.html' %}
+
+{% block page_title %} Covid19 Statistics {% endblock %}
+
+
+{% block content %}
+
+<br>
+
+<br>
+
+<h3 class="text-center">World Total Statistics </h3>
+
+<br>
+
+<div class="container">
+    <div class="card-group">
+
+
+        <div class=" col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Total Confirmed: {{response.TotalConfirmed}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Total Deaths: {{response.TotalDeaths}}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-md-4">
+            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Total Recovered: {{response.TotalRecovered}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<br>
+
+<br>
+
+<h4 class="text-center">Get Statistics For a Specific Country </h4>
+
+{% for object in sp %}
+
+<div class=" col-md-4">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Total Recovered: {{object.Country}}</h5>
+            <h5 class="card-title text-center">Total Recovered: {{object.Date}}</h5>
+
+            
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endfor %}
+
+
+
+
+{% endblock%}
