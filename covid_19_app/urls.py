@@ -1,9 +1,9 @@
 from django.urls import path, include
-from .views import search
+from .views import home
 
 
 urlpatterns = [
-    path('home', search, name='home')
+    path('home', home, name='home')
 
     
 ]
