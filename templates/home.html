@@ -1,67 +1,68 @@
-{% extends '_base.html' %}
+{% extends '_base.html' %} 
 
-{% block page_title %} Covid19 Statistics {% endblock %}
+{% block page_title %} Covid19 Statistics {% endblock%} 
+
 
 
 {% block content %}
 
-<br>
+<br />
 
-<br>
+<br />
 
-<h3 class="text-center">World Total Statistics </h3>
+<h3 class="text-center">World Total Statistics</h3>
 
-<br>
+<br />
 
 <div class="container">
-    <div class="card-group">
-
-
-        <div class=" col-md-4">
-            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Total Confirmed: {{first_response.TotalConfirmed}}</h5>
-                </div>
-            </div>
+  <div class="card-group">
+    <div class="col-md-4">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 20rem">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            Total Confirmed: {{first_response.TotalConfirmed}}
+          </h5>
         </div>
-
-        <div class=" col-md-4">
-            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Total Deaths: {{first_response.TotalDeaths}}</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class=" col-md-4">
-            <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Total Recovered: {{first_response.TotalRecovered}}</h5>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 20rem">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            Total Deaths: {{first_response.TotalDeaths}}
+          </h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-secondary mb-3" style="max-width: 20rem">
+        <div class="card-body">
+          <h5 class="card-title text-center">
+            Total Recovered: {{first_response.TotalRecovered}}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<br />
 
-<br>
+<br />
 
+<h4 class="text-center">Get Statistics For a Specific Country</h4>
 
-<br>
-
-<h4 class="text-center">Get Statistics For a Specific Country </h4>
-
-
-<select name="" id="">
+<form method="post" action="{% url 'home' %}">
+  {% csrf_token %}
+  <select name="selected_country">
     {% for object in my_list %}
-
-    <option value="">{{object}}
-    </option>
+    <option value="">{{object}}</option>
     {% endfor %}
-
-</select>
-
-
+  </select>
+  <input type="submit" value="Search" />
+</form>
 
 <!-- {% for object in second_response %}
 
@@ -76,8 +77,5 @@
 
 
 {% endfor %} -->
-
-
-
 
 {% endblock %}
