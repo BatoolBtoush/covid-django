@@ -13,7 +13,7 @@
 
 <br>
 
-<div class="container">
+<!-- <div class="container">
     <div class="card-group">
 
 
@@ -42,33 +42,43 @@
         </div>
     </div>
 </div>
-
+ -->
 
 <br>
+
 
 <br>
 
 <h4 class="text-center">Get Statistics For a Specific Country </h4>
 
-{% for object in sp %}
 
-<div class=" col-md-4">
-    <div class="card text-white bg-secondary mb-3" style="max-width: 20rem;">
-        <div class="card-body">
-            <h5 class="card-title text-center">Total Recovered: {{object.Country}}</h5>
-            <h5 class="card-title text-center">Total Recovered: {{object.Date}}</h5>
 
-            
+<select name="" id="">
+    {% for object in my_list %}
 
-        </div>
+    <option value="">{{object}}
+    </option>
+    {% endfor %}
+
+</select>
+
+
+
+<!-- {% for object in response %}
+
+
+<div class="card text-light bg-dark" style="width: 35rem;">
+    <h3 class="card-header"></h3>
+    <div class="card-body">
+      <p class="card-text">{{object.Country}} </p>
+      <p class="card-text">{{object.Date}} </p>
     </div>
-</div>
+  </div>
+
+
+{% endfor %} -->
 
 
 
-{% endfor %}
 
-
-
-
-{% endblock%}
+{% endblock %}
