@@ -1,9 +1,10 @@
 from django.urls import path, include
-from .views import home
+from .views import home, country
 
 
 urlpatterns = [
-    path('home', home, name='home')
+    path('home', home, name='home'),
+    path('allcountries', country, name='all_countries'),
 
-    
+   
 ]

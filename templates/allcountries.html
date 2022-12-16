@@ -1,0 +1,33 @@
+{% extends '_base.html' %}
+
+
+{% block page_title %} All Countries {% endblock %}
+
+
+{% block content %}
+
+
+{% for object in my_new_list %}
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card text-dark text-center" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-header">Country: {{object.Country}}</h5>
+                <p class="card-text">Total Confirmed: {{object.TotalConfirmed}} </p>
+                <p class="card-text">Total Deaths: {{object.TotalDeaths}} </p>
+                <p class="card-text">Total Recovered: {{object.TotalRecovered}} </p>
+                <p class="card-text">Date: {{object.Date}} </p>
+                <a href="#" class="btn btn-primary">ADD TO MY RECORDS </a>
+            </div>
+        </div>
+        <br>
+    </div>
+
+</div>
+
+{% endfor %}
+
+
+{% endblock %}
