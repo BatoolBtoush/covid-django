@@ -54,10 +54,13 @@
 
 <h4 class="text-center">Get Statistics For a Specific Country</h4>
 
+<br>
+
 <div class="container justify-content-center">
   <form method="POST" action="{% url 'home' %}">
     {% csrf_token %}
-    <select name="selected_country">
+    <label for="selected_country" style="margin-right: 5px;"> Select a Country : </label>
+    <select name="selected_country" id="selected_country">
       {% for object in my_list %}
       <option value="">{{object}}</option>
       {% endfor %}

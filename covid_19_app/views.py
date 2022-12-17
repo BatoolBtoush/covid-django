@@ -35,4 +35,3 @@ def country(request):
         my_new_list.append(response['Countries'][i])
     context = {'my_new_list': my_new_list}
     return render(request, 'allcountries.html', context)
-

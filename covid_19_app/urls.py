@@ -6,5 +6,6 @@ urlpatterns = [
     path('home', home, name='home'),
     path('allcountries', country, name='all_countries'),
 
+
    
 ]
