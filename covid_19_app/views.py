@@ -8,14 +8,17 @@ def home(request):
     # second_response = requests.get('https://api.covid19api.com/country/south-africa/status/confirmed?from=2020-09-06T00:00:00Z&to=2020-09-11T00:00:00Z').json()
     second_response = requests.get('https://api.covid19api.com/summary').json()
 
-    if request.method == 'POST':
+    my_list = []
+    for i in range(0, len(second_response['Countries'])):
+        my_list.append(second_response['Countries'][i]['Country'])
+
+
+    if request.method=='POST':
         selected_country = request.POST['selected_country']
         print('here', selected_country)
 
 
-    my_list = []
-    for i in range(0, len(second_response['Countries'])):
-        my_list.append(second_response['Countries'][i]['Country'])
+    
     return render(request, 'home.html', {'first_response':first_response, 'my_list': my_list})
 
 

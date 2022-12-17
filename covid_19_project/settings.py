@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'covid_19_app',
-    'rest_framework'
+    'rest_framework',
+    'bootstrap5'
 
 ]
 
