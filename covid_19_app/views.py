@@ -24,14 +24,24 @@ def home(request):
 
 
 
-def country(request):
-    response = requests.get('https://api.covid19api.com/summary').json()
-    results =  len(response['Countries'])
-    # print(results)
-    # print(response['Countries'])
-    # print(response['Countries'][0]['Country'])
+def all_countries(request):
+    first_response = requests.get('https://api.covid19api.com/summary').json()
+    results =  len(first_response['Countries'])
     my_new_list = []
+    records_stats = {}
+
+
     for i in range(0, results):
-        my_new_list.append(response['Countries'][i])
+        my_new_list.append(first_response['Countries'][i])
+
+    
+
+    if request.method=='POST':
+        # country = request.GET['country']
+        # response = requests.get(first_response['Countries']) 
+        print("hey")
+
+
+    
     context = {'my_new_list': my_new_list}
     return render(request, 'allcountries.html', context)
