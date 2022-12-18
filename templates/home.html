@@ -60,7 +60,7 @@
   <form action="/" method="POST">
     {% csrf_token %}
     <label for="selected_country" style="margin-right: 5px;"> Select a Country, Start & End Dates : </label>
-    <input type="search" value="write the country name from the drop-down list in here to search for it" name="selected_country" id="selected_country" >
+    <input type="search" placeholder="write the country name from the drop-down list in here to search for it" name="selected_country" id="selected_country" >
     <select >
       {% for object in my_list %}
       <option value="">{{object}}</option>
@@ -81,7 +81,20 @@
 
 <br>
 
-{req_js}
+<!-- {{req_js}} -->
+
+{% for date, case in bigger_list %}
+
+<div class="card text-light bg-dark" style="width: 35rem;">
+    <h3 class="card-header">Date: {{date}}</h3>
+    <div class="card-body">
+      <p class="card-text">Number of Confirmed Cases: {{case}} </p>
+    </div>
+    <br>
+  </div>
+  <br>
+
+  {% endfor %}
 
 <!-- {% for object in req_js %}
 
@@ -94,5 +107,17 @@
 
 
 {% endfor %} -->
+
+<!-- {% for key, value in new_dict %}
+    <tr>
+        <td> Key: {{ key }} </td> 
+        <td> Value: {{ value }} </td>
+    </tr>
+{% endfor %} -->
+
+
+
+
+
 
 {% endblock %}
