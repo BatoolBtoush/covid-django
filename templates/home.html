@@ -57,7 +57,7 @@
 <br>
 
 <div class="container justify-content-center">
-  <form action="/" method="POST">
+  <form action="{% url 'home' %}" method="POST">
     {% csrf_token %}
     <label for="selected_country" style="margin-right: 5px;"> Select a Country, Start & End Dates : </label>
     <select>

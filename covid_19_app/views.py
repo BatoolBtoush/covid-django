@@ -18,7 +18,7 @@ def home(request):
 
 
     for i in range(0, len(second_response['Countries'])):
-        my_list.append(second_response['Countries'][i]['Slug'])
+        my_list.append(second_response['Countries'][i]['Country'])
 
     if request.method =='POST':
         selected_country = request.POST['selected_country']
