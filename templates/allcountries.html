@@ -21,14 +21,15 @@
     <div class="col-sm-10 d-flex justify-content-center">
         <div class="card text-dark text-center" style="width: 20rem;">
             <div class="card-block card-body">
-                <form method="POST">
+                <form method="POST" action="{% url 'all_countries' %}">
                     {% csrf_token %}
                 <h5 name = "country" class="card-header">Country: {{object.Country}}</h5>
                 <p class="card-text">Total Confirmed Cases: {{object.TotalConfirmed}} </p>
                 <p class="card-text">Total Deaths Cases: {{object.TotalDeaths}} </p>
                 <p class="card-text">Total Recovered Cases: {{object.TotalRecovered}} </p>
-                <p class="card-text">Date: {{object.Date}} </p>
+                <p class="card-text" name="date">Date: {{object.Date}} </p>
                 <button type = "submit" class = "btn-danger btn-sm">ADD TO MY RECORDS </button>
+                <!-- <input type="submit" name="" id="" value="ADD TO MY RECORDS"> -->
             </form>
             </div>
         </div>

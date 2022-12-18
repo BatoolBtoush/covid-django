@@ -1,0 +1,15 @@
+{% extends '_base.html' %}
+
+{% block page_title %} Delete {{record.country}} {% endblock %}
+
+{% block main %}
+
+    <form class='well form-horizontal' action="/" method="POST">
+            <h4>Press Delete to complete</h4>
+            {% csrf_token %}
+            <div class="form-group">
+                {{form.as_p}}
+            </div>
+            <input type="submit" class="delete-button" value="Delete!">
+
+{% endblock %}

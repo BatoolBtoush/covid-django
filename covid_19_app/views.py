@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import requests
-# from django.views.generic import ListView
+from .models import CountryData
+from django.contrib import messages
+from django.views.generic import ListView, DeleteView
 
 
 def home(request):
@@ -70,6 +72,32 @@ def all_countries(request):
 
     for i in range(0, results):
         my_new_list.append(first_response['Countries'][i])
-  
+
+    # print(my_new_list)
+    if request.method == "POST":
+        if request.POST.get('country') and request.POST.get('date'):
+            added_record = CountryData()
+            added_record.country = request.POST.get('country')
+            added_record.date = request.POST.get('date')
+            added_record.save()
+            messages.success(request, "Record Added to Database Successfully!")
+            return render(request,'allcountries.html')
+        else:
+            return render(request,'allcountries.html')
+
+
     context = {'my_new_list': my_new_list}
     return render(request, 'allcountries.html', context)
+
+
+class MyRecords(ListView):
+    template_name = 'myrecords.html'
+    model = CountryData
+    context_object_name = "records_list"
+
+
+
+class DeleteMyRecord(DeleteView):
+    template_name = "deleterecord.html"
+    model = CountryData
+    success_url = '/'
