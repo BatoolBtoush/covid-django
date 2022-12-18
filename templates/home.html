@@ -60,7 +60,8 @@
   <form action="/" method="POST">
     {% csrf_token %}
     <label for="selected_country" style="margin-right: 5px;"> Select a Country, Start & End Dates : </label>
-    <select name="selected_country" id="selected_country" >
+    <input type="search" value="write the country name from the drop-down list in here to search for it" name="selected_country" id="selected_country" >
+    <select >
       {% for object in my_list %}
       <option value="">{{object}}</option>
       {% endfor %}

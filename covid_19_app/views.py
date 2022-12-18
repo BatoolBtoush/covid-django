@@ -20,8 +20,10 @@ def home(request):
         request_handler = requests.get(f"https://api.covid19api.com/country/{selected_country}/status/confirmed?from={start_date}T00:00:00Z&to={end_date}T00:00:00Z")
         if request_handler.status_code == 200:
             request_json = request_handler.json()
-            print(request_json)
+            # print('request_json', request_json)
+            # print('selected_country',selected_country)
             req_js.append(request_json)
+            print(req_js[0])
         else:
             req_js.append(1)
 
@@ -31,6 +33,7 @@ def home(request):
         'req_js': req_js
 
     }
+    
     return render(request, 'home.html', context)
 
 
