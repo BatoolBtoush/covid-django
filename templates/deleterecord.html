@@ -6,12 +6,12 @@
 
 <h4>Press Delete to complete</h4>
 
-    <form class='well form-horizontal' action="" method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                {{form.as_p}}
-            </div>
-            <input type="submit" class="delete-button" value="Delete!">
-    </form>
+<form class='well form-horizontal' action="" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        {{form.as_p}}
+    </div>
+    <input type="submit" class="delete-button" value="Delete!">
+</form>
 
 {% endblock %}

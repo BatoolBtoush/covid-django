@@ -10,7 +10,7 @@
 <br>
 
 
-<h3 class="text-center">Covid19 Statistics For All Countries  </h3>
+<h3 class="text-center">Covid19 Statistics For All Countries </h3>
 
 <br>
 
@@ -22,7 +22,7 @@
         <div class="card text-dark text-center" style="width: 20rem;">
             <div class="card-block card-body">
                 <!-- <form method="POST" action=""> -->
-                    <!-- {% csrf_token %} -->
+                <!-- {% csrf_token %} -->
                 <h5 class="card-header">Country: {{object.Country}} </h5>
                 <!-- <input name = "country" placeholder="Write the country name" > -->
                 <p class="card-text">Total Confirmed Cases: {{object.TotalConfirmed}} </p>
@@ -30,15 +30,15 @@
                 <p class="card-text">Total Recovered Cases: {{object.TotalRecovered}} </p>
                 <p class="card-text">Date: {{object.Date}}</p>
                 <!-- <input name="date" placeholder="Write the date" > -->
-                <button class ="btn btn-success" onClick="storeData()">ADD TO MY RECORDS </button>
+                <button class="btn btn-success" onClick="storeData()">ADD TO MY RECORDS </button>
                 <!-- <input type="submit" value="ADD TO MY RECORDS"> -->
-            <!-- </form> -->
+                <!-- </form> -->
             </div>
         </div>
         <br>
     </div>
-
 </div>
+<br>
 
 
 {% endfor %}

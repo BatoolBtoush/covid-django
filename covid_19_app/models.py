@@ -7,7 +7,3 @@ class CountryData(models.Model):
 
     def __str__(self):
         return self.country
-
-    
-     
-    
