@@ -1,8 +1,9 @@
 from django.shortcuts import render
 import requests
 from .models import CountryData
-from django.contrib import messages
+# from django.contrib import messages
 from django.views.generic import ListView, DeleteView
+import datetime
 
 
 def home(request):
@@ -68,22 +69,25 @@ def all_countries(request):
     first_response = requests.get('https://api.covid19api.com/summary').json()
     results =  len(first_response['Countries'])
     my_new_list = []
-
+    data_list = []
 
     for i in range(0, results):
         my_new_list.append(first_response['Countries'][i])
 
     # print(my_new_list)
+    
+
     if request.method == "POST":
         if request.POST.get('country') and request.POST.get('date'):
             added_record = CountryData()
             added_record.country = request.POST.get('country')
-            added_record.date = request.POST.get('date')
+                                                                                    # 2022-12-19T08:53:48.179Z
+            added_record.date = datetime.datetime.strptime(request.POST.get('date'), "%Y-%m-%dT%I:%M:%S.%fZ")
             added_record.save()
-            messages.success(request, "Record Added to Database Successfully!")
-            return render(request,'allcountries.html')
+            print("Hey")
+            return render(request,'myrecords.html')
         else:
-            return render(request,'allcountries.html')
+            return render(request,'myrecords.html')
 
 
     context = {'my_new_list': my_new_list}
