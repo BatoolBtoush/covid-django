@@ -1,1 +1,1 @@
-console.log("Hello")
+const storeData = () => console.log("HEY")

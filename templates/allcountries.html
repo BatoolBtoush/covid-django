@@ -21,24 +21,25 @@
     <div class="col-sm-10 d-flex justify-content-center">
         <div class="card text-dark text-center" style="width: 20rem;">
             <div class="card-block card-body">
-                <form method="POST" action="{% url 'all_countries' %}">
-                    {% csrf_token %}
+                <!-- <form method="POST" action=""> -->
+                    <!-- {% csrf_token %} -->
                 <h5 class="card-header">Country: {{object.Country}} </h5>
-                <input name = "country" placeholder="Write the country name" >
+                <!-- <input name = "country" placeholder="Write the country name" > -->
                 <p class="card-text">Total Confirmed Cases: {{object.TotalConfirmed}} </p>
                 <p class="card-text">Total Deaths Cases: {{object.TotalDeaths}} </p>
                 <p class="card-text">Total Recovered Cases: {{object.TotalRecovered}} </p>
                 <p class="card-text">Date: {{object.Date}}</p>
-                <input name="date" placeholder="Write the date" >
-                <!-- <button type = "submit" class = "btn-danger btn-sm">ADD TO MY RECORDS </button> -->
-                <input type="submit" value="ADD TO MY RECORDS">
-            </form>
+                <!-- <input name="date" placeholder="Write the date" > -->
+                <button class ="btn btn-success" onClick="storeData()">ADD TO MY RECORDS </button>
+                <!-- <input type="submit" value="ADD TO MY RECORDS"> -->
+            <!-- </form> -->
             </div>
         </div>
         <br>
     </div>
 
 </div>
+
 
 {% endfor %}
 
