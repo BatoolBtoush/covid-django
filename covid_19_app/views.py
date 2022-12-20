@@ -79,8 +79,6 @@ def all_countries(request):
     for i in range(0, results):
         my_new_list.append(first_response["Countries"][i])
 
-    # print(my_new_list)
-
     if request.method == "POST":
         if request.POST.get("country") and request.POST.get("date"):
             added_record = CountryData()
@@ -90,7 +88,6 @@ def all_countries(request):
                 request.POST.get("date"), "%Y-%m-%dT%I:%M:%S.%fZ"
             )
             added_record.save()
-            # print("oppps")
             return render(request, "allcountries.html")
         else:
             return render(request, "allcountries.html", )
