@@ -91,9 +91,9 @@ def all_countries(request):
             )
             added_record.save()
             # print("oppps")
-            return render(request, "myrecords.html")
+            return render(request, "allcountries.html")
         else:
-            return render(request, "myrecords.html", )
+            return render(request, "allcountries.html", )
 
     context = {"my_new_list": my_new_list}
     return render(request, "allcountries.html", context)

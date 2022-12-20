@@ -62,15 +62,16 @@
 
 <br>
 
-<div class="container justify-content-center">
+<div class="row justify-content-center">
+  <div class="col-sm-10 d-flex justify-content-center">
   <form action="{% url 'home' %}" method="POST">
     {% csrf_token %}
     <label for="selected_country card-text" style="margin-right: 5px;"> Select a Country, Start & End Dates : </label>
-    <select>
+    <!-- <select>
       {% for object in my_list %}
       <option value="">{{object}}</option>
       {% endfor %}
-    </select>
+    </select> -->
     <input type="search" placeholder="write the country name from the drop-down list in here to search for it"
       name="selected_country" id="selected_country" required>
 
@@ -82,6 +83,7 @@
 
     <input type="submit" value="Search" />
   </form>
+</div>
 </div>
 
 
