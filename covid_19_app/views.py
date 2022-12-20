@@ -5,6 +5,12 @@ from .models import CountryData
 # from django.contrib import messages
 from django.views.generic import ListView, DeleteView
 import datetime
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from django.shortcuts import get_object_or_404
+
+
+
 
 
 def home(request):
@@ -99,7 +105,13 @@ class MyRecords(ListView):
     context_object_name = "records_list"
 
 
-class DeleteMyRecord(DeleteView):
-    template_name = "deleterecord.html"
-    model = CountryData
+# class DeleteMyRecord(DeleteView):
+#     template_name = "deleterecord.html"
+#     model = CountryData
+#     success_url = "/"
+
+
+def delete(request, id):
+    note = get_object_or_404(CountryData, pk=id).delete()
     success_url = "/"
+    return HttpResponseRedirect(success_url)

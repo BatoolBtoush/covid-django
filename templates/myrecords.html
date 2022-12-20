@@ -20,7 +20,9 @@
         <h5 class="card-header">Country: {{record.country}} </h5>
         <br>
         <p class="card-text">Date: {{record.date}} </p>
-        <button class=""><a href="/record-delete/{{record.id}}">Delete</a></button>
+        <!-- <button class=""><a href="/record-delete/{{record.id}}">Delete</a></button> -->
+        <button class=""><a href="{% url 'record-delete' record.id %}">Delete</a></button>
+
       </div>
     </div>
     <br>

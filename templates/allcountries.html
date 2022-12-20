@@ -21,19 +21,19 @@
     <div class="col-sm-10 d-flex justify-content-center">
         <div class="card text-dark text-center" style="width: 20rem;">
             <div class="card-block card-body">
-                <form method="POST" action="">
-                {% csrf_token %}
-                <h5 class="card-header">Country: {{object.Country}}, {{object.CountryCode}} </h5>
-                <input name = "country" placeholder="Write the country name" >
+                <!-- <form method="POST" action=""> -->
+                <!-- {% csrf_token %} -->
+                <h5 class="card-header" name = "country">Country: {{object.Country}}, {{object.CountryCode}} </h5>
+                <!-- <input name = "country" placeholder="Write the country name" > -->
                 <br>
                 <p class="card-text">Total Confirmed Cases: {{object.TotalConfirmed}} </p>
                 <p class="card-text">Total Deaths Cases: {{object.TotalDeaths}} </p>
                 <p class="card-text">Total Recovered Cases: {{object.TotalRecovered}} </p>
-                <p class="card-text">Date: {{object.Date}}</p>
-                <input name="date" placeholder="Write the date" >
-                <button class="btn btn-success" type="submit">ADD TO MY RECORDS </button>
-                <!-- <input type="submit" value="ADD TO MY RECORDS"> -->
-                </form>
+                <p class="card-text" name="date">Date: {{object.Date}}</p>
+                <!-- <input name="date" placeholder="Write the date" > -->
+                <button class="btn btn-success" type="submit" onclick="storeData()">ADD TO MY RECORDS </button>
+                <!-- <button class="btn btn-success" type="submit">ADD TO MY RECORDS </button> -->
+                <!-- </form> -->
             </div>
         </div>
         <br>
