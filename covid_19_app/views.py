@@ -84,10 +84,10 @@ def all_countries(request):
                 request.POST.get("date"), "%Y-%m-%dT%I:%M:%S.%fZ"
             )
             added_record.save()
-            print("Hey")
+            # print("oppps")
             return render(request, "myrecords.html")
         else:
-            return render(request, "myrecords.html")
+            return render(request, "myrecords.html", )
 
     context = {"my_new_list": my_new_list}
     return render(request, "allcountries.html", context)

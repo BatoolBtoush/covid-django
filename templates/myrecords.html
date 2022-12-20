@@ -10,7 +10,7 @@
 <br>
 
 <br>
-
+{% if records_list %}
 {% for record in records_list %}
 
 <div class="row justify-content-center">
@@ -18,6 +18,7 @@
     <div class="card text-dark text-center" style="width: 20rem;">
       <div class="card-block card-body">
         <h5 class="card-header">Country: {{record.country}} </h5>
+        <br>
         <p class="card-text">Date: {{record.date}} </p>
         <button class=""><a href="/record-delete/{{record.id}}">Delete</a></button>
       </div>
@@ -27,8 +28,11 @@
 
 </div>
 <br>
-
 {% endfor %}
+{% else %}
+<br>
+<h2 class="text-center">No Records Avaliable! ✍🏻 </h2>
+{% endif %}
 
 
 {% endblock %}
