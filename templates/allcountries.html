@@ -35,8 +35,8 @@
                     <input name="date" placeholder="Write the date" >
                 </p>
                 
-                <button class="btn btn-success" type="submit" onclick="storeData()">ADD TO MY RECORDS </button>
-                <!-- <button class="btn btn-success" type="submit">ADD TO MY RECORDS </button> -->
+                <button class="btn btn-success" type="submit">ADD TO MY RECORDS </button>
+                <!-- <button class="btn btn-success" type="submit" onclick="storeData()">ADD TO MY RECORDS </button> -->
                 </form>
             </div>
         </div>
@@ -44,6 +44,25 @@
     </div>
 </div>
 <br>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+    $.ajax({
+    url: "",
+    type: "POST",
+    data: {
+            'country': 'County',
+            'date': 'Date', 
+        }, 
+    success: (data) => {
+      console.log(data);
+    },
+    error: (error) => {
+      console.log("error");
+    }
+  });
+</script> -->
 
 
 {% endfor %}

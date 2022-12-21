@@ -90,7 +90,7 @@ def all_countries(request):
             added_record.save()
             return render(request, "allcountries.html")
         else:
-            return render(request, "allcountries.html", )
+            return render(request, "allcountries.html" )
 
     context = {"my_new_list": my_new_list}
     return render(request, "allcountries.html", context)
@@ -110,5 +110,5 @@ class MyRecords(ListView):
 
 def delete(request, id):
     note = get_object_or_404(CountryData, pk=id).delete()
-    success_url = "/"
+    success_url = "/myrecords"
     return HttpResponseRedirect(success_url)
